@@ -1,0 +1,77 @@
+:root {
+    --cam_position: 0px;
+  }
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div.background {
+    display: none;
+}
+
+.hidden {
+    position: absolute;
+    width: 20vw;
+    height: 20vh;
+    /*overflow: hidden;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background-container {
+    border: 2px solid blue;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.girl {
+    transform-origin: center;
+    position: absolute;
+    height: 100%;
+    background-image:url(img/girl.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+    aspect-ratio: 16 / 9;
+}
+
+.desk {
+    position: absolute;
+    height: 100%;
+    background-image:url(img/desk.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+    aspect-ratio: 16 / 9;
+}
+
+.lampe {
+    position: absolute;
+    height: 100%;
+    background-image:url(img/lampe.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+    aspect-ratio: 16 / 9;
+}
+
+.wall {
+    position: absolute;
+    height: 100%;
+    background-image:url(img/wall.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateZ(calc(var(--cam_position) - 500px));
+    border: 2px solid black;
+    aspect-ratio: 16 / 9;
+}
+
+@keyframes camZ {
+    to {
+        --cam_position:scroll;
+    }
+}
